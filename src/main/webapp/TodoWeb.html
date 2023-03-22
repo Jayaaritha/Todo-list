@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link href="TodoWeb.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/021e7c3f4c.js" crossorigin="anonymous"></script>
+  </head>
+  <body onload="cookieCheck()" class="body1">
+    <!-- root div open  -->
+    <div class="root">
+      <div class="first">
+        <div class="subfirst">
+          <h3 id="headTodo">Todo List</h3>
+        </div>
+        <div class="second">
+          <div class="todoForMe" style="margin-top: 6%;" onclick="yourTodo()">
+        <!--  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/usxfmtjg.json"
+    trigger="hover"
+    colors="primary:#ffffff"
+    class="loarIcon1">
+</lord-icon> -->
+            <p id="yourTodo" class="todo">My Todo</p>
+          </div>
+          <div class="todoForMe" onclick="AssignedByMe()">
+         <!--  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+			<lord-icon
+               src="https://cdn.lordicon.com/kulwmpzs.json"
+               trigger="hover"
+               colors="primary:#ffffff"
+               class="loarIcon1">
+            </lord-icon>-->
+            <p id="AssignedByMe" class="todo">Assigned By Me</p>
+          </div>
+          <div class="todoForMe" onclick="AssignedToMe()">
+                    <!-- <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+			<lord-icon
+               src="https://cdn.lordicon.com/kulwmpzs.json"
+               trigger="hover"
+               colors="primary:#ffffff"
+               class="loarIcon1">
+            </lord-icon> -->
+            <p id="AssignedToMe" class="todo">Assigned To Me</p>
+          </div>
+        </div>
+        <div id="Imporatant">
+       
+        <h2>Important </h2>
+        <!-- <h4 id="˅">˅</h4>  -->
+          <div class="high">
+               <p id="highpr" onclick="showHighPriority()" class="todo one">High Priority</p>
+          </div>
+          <div class="high">
+               <p id="close" style="font-size: 18px;" onclick="deadLineTodos()" class="todo one">Deadline Todo</p>
+          </div>
+          <div class="high">
+               <p id="expiry" onclick="ExpiryTodo()"class="todo one">Expiry Todo</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="next">
+        <div class="subnext">
+          <h3 class="subnext-your-head" id="TodoHead">My Todo</h3>
+          <i class="fa-regular fa-bell notification" id="notificationbell" onclick="notification()"></i>
+          <div id="notify"></div>
+            <div id="logOut" onclick="logOut()">logout</div>
+         <!--onclick="notification()"  <div id="profile">
+            <p id="profileLetter"></p>
+          </div>--> 
+        </div>
+        <div class="third" id="t1">
+          <div class="third" id="TodoDiv">
+            <div id="myTododiv"></div>
+            <div class="addTodo" style="display:flex;" id="Todo" onclick="AddTodoBu()">
+              <h5 id="head4">+</h5>
+            </div>
+          </div>
+          <div class="third" style="display:none;" class="Asssss" id="qqqqqq">
+           
+          </div>
+          <div style="display:none;" id="highPriority">
+          <div id="change1">
+          
+          <select onchange="showSelectHighPriority()"class="addTodo" name="select" id="change">
+            <option value="MyTodo">My Todo</option>
+            <option value="Assignedbyme">Assigned By Me</option>
+            <option value="AssigneeTodo">Assigned To Me</option>
+          </select>
+          <div 	id="x1" style="display:none;" onclick="cancelDisplay2()">X</div>
+          </div>
+          <div id="show">
+          
+          </div>
+          </div>
+          <div style="display:none;" id="DeadLineTodo">
+          <div id="change2">
+          <select onchange="showDeadLineTodo1()"class="addTodo" name="select" id="changes">
+            <option value="MyTodo">My Todo</option>
+            <option value="Assignedbyme">Assigned By Me</option>
+            <option value="AssigneeTodo">Assigned To Me</option>
+          </select>
+          <div 	id="x1x" style="display:none;" onclick="cancelDisplay3()">X</div>
+          </div>
+          <div id="show1">
+          
+          </div>
+          </div>
+          <div style="display:none;" id="expiryTodo">
+          <div id="change3">
+          <select onchange="ShowExpiryTodo()"class="addTodo" name="select" id="changes3">
+            <option value="MyTodo">My Todo</option>
+            <option value="Assignedbyme">Assigned By Me</option>
+            <option value="AssigneeTodo">Assigned To Me</option>
+          </select>
+          <div 	id="x2x" style="display:none;" onclick="cancelDisplay3()">X</div>
+          </div>
+          <div id="show3">
+          
+          </div>
+          </div>
+         
+        </div>
+        <div class="third" style="display: none;" id="Assigneessss">
+          <!--  <div class="sse" id="search3"></div>-->
+        </div>
+      </div>
+    </div>
+    <!-- </div> root div close -->
+    <!-- Add Todo div open -->
+    <div id="YourDiv" class="addTodoDiv">
+      <div class="todoForm">
+        <div class="detailDiv">
+          <h3 id="newTodohead">New Todo</h3>
+          <label id="name" for="taskName">Todo Name:</label>
+          <input id="taskName" class="todoInput" type="text" placeholder="Task Name" autocomplete="off" required="required" /> Add Description: <textarea id="taskDesc" class="todoInput" autocomplete="off" required="required"></textarea> Due Date: <input type="date" id="dueDate" />
+          <label id="priorityHead" for="priority">Priority:</label>
+          <select name="priority" id="priority">
+            <option value="None">None</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <!-- <select name="Catefory" id="catefory">
+            <option value="Work">None</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select> -->
+        </div>
+        <div class="cancelButton" onclick="Cancel()">
+          <p id="cancelPara">cancel</p>
+        </div>
+        <div class="addD" onclick="AddYourTodo()">
+          <p id="AddDbs">Add</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Todo div closed -->
+    <!-- Assignee Todo div open -->
+    <div id="AssigneeDiv" class="addTodoDiv">
+      <div style="padding: 2%;" class="todoForm">
+        <div class="detailDiv">
+          <h3 style="margin-top: -17%;margin-bottom: 12%;">New Todo</h3>
+          <label id="Assingeename" style="margin-top: 1%;" for="AssingeetodoName">Todo Name:</label>
+          <input id="AssingeetodoName" class="AssingeetodoInput" type="text" placeholder="Task Name" autocomplete="off" required="required" /> Add Description: <textarea id="AssingeetaskDesc" class="AssingeetodoInput" autocomplete="off" required="required"></textarea> Due Date: <input type="date" id="AssingeedueDate" />
+          <label id="priority2Head" for="Assigneepriority">Priority:</label>
+          <select name="priority" id="Assigneepriority">
+            <option value="None">None</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <label id="AssingedToId" for="AssigneeId" style="margin-bottom: 2%;">Assignee Id:</label>
+          <select id="AssigneeId" class="AssingeeIdTo"></select>
+        </div>
+        <div class="AssigneecancelButton" onclick="Cancel1()">
+          <p id="cancelPara">cancel</p>
+        </div>
+        <div class="AssigneeaddD" onclick="AssigneeTodoAdd()">
+          <p id="AddDbs">Assigned</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="big"><div class="todoListdiv"><lable for="todoname">Todo name:</lable><input id="todoname" value="Todo name"/><h3 class="todoName2">Todo name : Todo</h3><h3 class="todoDesc2">Todo describtion</h3><h3>sfdak asdf dfs fds dsf df df df sdf fs fs</h3><h3>Start day : 22/02/2023</h3><h3>due day : 22/02/2023</h3><select name="priority" id="Assigneepriority"><option value="None">None</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select><select name="priority" id="Assigneepriority"><option value="None">New</option><option value="Low">Completed</option><option value="Medium">Rejected</option><option value="High">Accepted</option></select></div></div> -->
+    <!-- Assignee Todo div closed -->
+    <div style="display:none;" id="r"></div>
+    <div class="r2" id="rr"> 
+    <div id="notificationdiv">
+          <div id="cancelNotificationDiv"><i class="fa-solid fa-xmark crossmark" id="cross"></i></div>
+           <div id="notification2">
+           </div>
+          </div>
+         
+      </div>
+    <script src="TodoWeb.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+  </body>
+</html>

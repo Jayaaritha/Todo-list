@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<web-app>
+<display-name>TODO</display-name>
+<servlet>
+    <servlet-name>dbConnection</servlet-name>
+    <servlet-class>LoginLogout.JDBCConnection</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  <init-param>
+  <param-name>dbName</param-name>
+  <param-value>TodoList</param-value>
+  </init-param>
+  
+  <init-param>
+  <param-name>dbUserName</param-name>
+  <param-value>jayaharitha</param-value>
+  
+  </init-param>
+  <init-param>
+    <param-name>dbPassword</param-name>
+    <param-value>root</param-value>
+  </init-param>
+  
+</servlet>
+
+<servlet>
+        <servlet-name>Signup</servlet-name>
+		<servlet-class>LoginLogout.SignUp</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>Signup</servlet-name>
+  		<url-pattern>/SignUp</url-pattern>
+</servlet-mapping>
+<servlet>
+        <servlet-name>LogIn</servlet-name>
+		<servlet-class>LoginLogout.LogIn</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>LogIn</servlet-name>
+  		<url-pattern>/SignIn</url-pattern>
+</servlet-mapping>
+<servlet>
+        <servlet-name>AddTodo</servlet-name>
+		<servlet-class>AddTodoServlet.AddTodoLists</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>AddTodo</servlet-name>
+  		<url-pattern>/TodoAddForDatabase</url-pattern>
+</servlet-mapping>
+<servlet>
+        <servlet-name>Logout</servlet-name>
+		<servlet-class>LoginLogout.Logout</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>Logout</servlet-name>
+  		<url-pattern>/LogOut</url-pattern>
+</servlet-mapping>
+
+<filter>
+    <filter-name>Validation</filter-name>
+    <filter-class>Filter.ValidationFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>Validation</filter-name>
+    <url-pattern>/SignUp</url-pattern>
+</filter-mapping>
+<filter>
+    <filter-name>Authentication</filter-name>
+    <filter-class>Filter.AuthenticationFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>Authentication</filter-name>
+    <url-pattern>/SignIn</url-pattern>
+</filter-mapping>
+<servlet>
+     <servlet-name>FetchTheTodoData</servlet-name>
+     <servlet-class>fetchData.FetchTheTodoList</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>FetchTheTodoData</servlet-name>
+     <url-pattern>/FetchTheTodoList</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ <servlet-name>AddNotificationData</servlet-name>
+     <servlet-class>Notification.AddNotificationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>AddNotificationData</servlet-name>
+     <url-pattern>/AddNotificationServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+     <servlet-name>OptionIdData</servlet-name>
+     <servlet-class>fetchData.OptionIdServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>OptionIdData</servlet-name>
+     <url-pattern>/OptionIdServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+     <servlet-name>FetchAssigneeTodo</servlet-name>
+     <servlet-class>fetchData.FetchTheAssigneeTodo</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>FetchAssigneeTodo</servlet-name>
+     <url-pattern>/FetchTheAssigneeTodo</url-pattern>
+</servlet-mapping>
+<servlet>
+     <servlet-name>Update</servlet-name>
+     <servlet-class>Update.updateServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+     <servlet-name>Update</servlet-name>
+     <url-pattern>/update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+     <servlet-name>Update2</servlet-name>
+     <servlet-class>Update.UpdateFullTodo</servlet-class>
+</servlet>
+
+<servlet-mapping>
+     <servlet-name>Update2</servlet-name>
+     <url-pattern>/updateWholeTodo</url-pattern>
+</servlet-mapping>
+<servlet>
+     <servlet-name>FetchTheAssigneeToMeTodo</servlet-name>
+     <servlet-class>fetchData.FetchTheAssigneeToMeTodo</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>FetchTheAssigneeToMeTodo</servlet-name>
+     <url-pattern>/FetchTheAssigneeToMeTodo</url-pattern>
+</servlet-mapping>
+
+<servlet>
+     <servlet-name>getNameServlet1</servlet-name>
+     <servlet-class>fetchData.getNameServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>getNameServlet1</servlet-name>
+     <url-pattern>/getNameServlet1</url-pattern>
+</servlet-mapping>
+<servlet>
+     <servlet-name>fetchNotification</servlet-name>
+     <servlet-class>fetchData.FetchNotification</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>fetchNotification</servlet-name>
+     <url-pattern>/fetchNotifications</url-pattern>
+</servlet-mapping>
+
+<servlet>
+     <servlet-name>Update1</servlet-name>
+     <servlet-class>Update.UpdateNotification</servlet-class>
+</servlet>
+
+<servlet-mapping>
+     <servlet-name>Update1</servlet-name>
+     <url-pattern>/updateNotification</url-pattern>
+</servlet-mapping>
+
+<servlet>
+     <servlet-name>fetchNotification1</servlet-name>
+     <servlet-class>fetchData.FetchTheWholeList</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>fetchNotification1</servlet-name>
+     <url-pattern>/FetchTheWholeList</url-pattern>
+</servlet-mapping>
+</web-app>

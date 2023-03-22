@@ -1,0 +1,2064 @@
+/*html, body {
+    width: 100%;
+    height: 100%;
+    
+}*/
+* {
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+.showTodo {
+    position: absolute;
+    background-color: #1d1c1c;
+    width: 100%;
+    margin-top: -45%;
+    height: 7%;
+    overflow-x: scroll;
+    color: white;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 2fr 2fr 2fr 2fr;
+}    
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: 0 0 0; 
+    color: white;
+    overflow: hidden;
+}
+
+
+/*.body1 {
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: 0 0 0; 
+    color:white;
+}*/
+.root
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 14.5% 86.5%;
+}
+
+.first
+{
+	border: 0.2px solid black;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: #121212;
+    grid-template-rows: 5.9% 18% 30%;
+}
+.second
+{
+	/*order: 1px solid #d7d2d2;*/
+    width: 100%;
+    height: 95%;
+    padding: 4.3%;
+    color:#a6a6a6;
+}
+.third
+{
+    border: 2px solid black;
+    width: 100%;
+    grid-template-rows: 12% 88%;
+    height: 100%;
+    margin-bottom: -30%;
+    background-color: black;
+}
+.todoForMe
+{
+    display: flex;
+    margin-left: -5%;
+    cursor: pointer;
+    width: 103%;
+      height: 26%;
+    align-content: center;
+    flex-wrap: nowrap;
+      border-radius: 11px;
+}
+/*#yourTodo
+{
+	margin-left: 0%;
+    border: 2px solid #121212;
+    padding: 3%;
+    padding-left: 4.5%;
+    width: 100%;
+    border-radius: 11px;
+    color: #00a7f6;
+}*/
+
+
+#AssignedByMe
+{
+	color:white;
+}
+#AssignedToMe
+{
+	color:white;
+}
+.todo
+{
+    margin-left: 4%;
+    width: 56%;
+    color: #00a7f6;
+    font-size: 20px;
+    margin-top: 1.9%;
+}
+.todoForMe:hover
+{
+	  background-color:#2d2d2d;
+	       border: 2px solid #121212;
+}
+.subfirst
+{
+	border-bottom: 1px solid #696565;
+    margin-top: 0%;
+}
+#headTodo
+{
+   margin-left: 6%;
+   color:#c2c2c2;
+   font-size: 21px;
+}
+.next
+{
+    display: grid;
+    grid-template-rows: 6.0% 94.0%;
+}
+.subnext
+{
+    background-color: black;
+    border-bottom: 1px solid #696565;
+}
+.subnext-your-head
+{
+	margin-left: 2%;
+    margin-top: 23px;
+    color:#c2c2c2;
+    font-size: 21px;
+}
+.sortList{    padding: 0.5%;
+    background-color: black;
+    height: 4%;
+    color: #00a7f6;
+    width: 8%;
+    border: 1px solid #00a7f6;
+    margin-left: -5%;
+    margin-top: -45%;}
+    
+    .sortList1{    padding: 0.5%;
+    background-color: black;
+    height: 4%;
+    color: #00a7f6;
+    width: 8%;
+    border: 1px solid #00a7f6;
+    margin-left: -5%;
+    margin-top: -45%;}
+.addTodo
+{
+    border-radius: 50px;
+    height: 6%;
+    background-color: #00a7f6;
+    width: 66px;
+    display: flex;
+    position: absolute;
+    left: 91%;
+    top: 89%;
+    align-items: flex-start;
+}
+#head4
+{
+    margin-top: -15.5%;
+    margin-left: 22%;
+    font-size: 65px;
+    cursor: pointer;
+    font-weight: 200;
+}
+#head5
+{
+    margin-top: -15.5%;
+    margin-left: 22%;
+    font-size: 65px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.addTodoDiv
+{
+    width: 100%;
+    display:none;
+    /*border: 1px solid white;*/
+    margin-top: -56%;
+    height: 109vh;
+    position: absolute;
+    background-color: rgba(41,41,41, 0.8);
+    /*margin: 0 0 0;*/
+}
+
+.todoForm
+{
+    overflow-y: scroll;
+    margin-left: 54%;
+    width: 46%;
+    background-color: black;
+    height: 102%;
+}
+
+.cancelButton
+{
+    height: 4%;
+    color: #00a7f6;
+    border: 1px solid #00a7f6;
+    display: grid;
+    margin-top: 0.5%;
+    border-radius: 25px;
+    width: 9%;
+        margin-left: 6%;
+    position: absolute;
+    top: 83%;
+    cursor: pointer;
+}
+#cancelPara
+{
+	margin-top: 5%;
+    margin-left: 31%;
+}
+input
+{
+	color:white;
+}
+
+.detailDiv
+{
+	padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    color:#c2c2c2;
+        overflow-y: scroll;
+  }
+
+#taskName
+{
+	color:white;
+	padding: 2%;
+}
+#taskDesc
+{
+	color: white;
+    height: 195px;
+    padding: 2%;
+    border-radius: 9px;
+}
+.todoInput
+{
+    height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+}
+
+#dueDate
+{
+	height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    color:white;
+	padding: 2%;
+}
+
+#priorityHead
+{
+	margin-bottom: 2%;
+}
+#priority
+{
+	height: 44px;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    color: white;
+    padding: 0.5%;
+}
+#newTodohead
+{
+	margin-top: 1%;
+}
+#name
+{
+	margin-top: 4%;
+}
+.addD
+{
+	margin-left: 36%;
+    margin-top: -1.1%;
+    background-color: #00a7f6;
+    color: white;
+    border-radius: 25px;
+    height: 4%;
+    border: 1px solid #00a7f6;
+    width: 16%;
+    display: grid;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    cursor: pointer;
+}
+
+#AssigneeDiv
+{
+	display:none;
+}
+#YourDiv
+{
+	display:none;
+}
+
+.AssingeetodoInput
+{
+    height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    padding: 2%;
+}
+#AssingeetaskDesc
+{
+	    height: 174px;
+	    color:white;
+}
+#AssingeedueDate
+{
+	height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    padding: 2%;
+}
+
+#priority
+{
+    height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    padding: 1%;
+    color:white;
+}
+.AssingeeIdTo
+{
+	height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    padding: 2%;
+    color:white;
+}
+.AssigneecancelButton
+{
+	height: 4%;
+    color: #00a7f6;
+    border: 1px solid #00a7f6;
+    display: grid;
+    margin-top: 0.6%;
+    border-radius: 25px;
+    width: 9%;
+    margin-left: 4%;
+    position: absolute;
+    top: 85%;
+    cursor: pointer;
+}
+.AssigneeaddD
+{
+    margin-left: 38%;
+    margin-top: 6.9%;
+    background-color: #00a7f6;
+    color: white;
+    border-radius: 25px;
+    height: 4.5%;
+    border: 1px solid #00a7f6;
+    width: 16%;
+    display: grid;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    cursor: pointer;
+}
+
+#Assigneepriority
+{
+	height: 44px;
+    margin-top: 2%;
+    background-color: black;
+    border: 1px solid #696565;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    padding: 1%;
+    color:white;
+}
+
+#profile
+{
+    margin-top: -63px;
+    margin-left: 81.5%;
+    border-radius: 50px;
+    background-color: #000000;
+    width: 2.3%;
+    height: 4.1%;
+    position: absolute;
+    border: 1px solid #00a7f6;
+    cursor: pointer;
+}
+
+#profileLetter
+{
+    color: #00a7f6;
+    font-family: system-ui;
+    font-size: 33px;
+    margin-top: 1px;
+    margin-left: 10px;
+    font-weight: 50;
+}
+
+#profile:hover
+{
+	background-color: rgba(0,120,176, 0.5);
+}
+
+.showTodo
+{
+	position: absolute;
+    background-color: #1d1c1c;
+    width: 100%;
+    margin-top: -45%;
+    height: 7%;
+    overflow-x:scroll;
+    color:white;
+	display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 2fr 2fr 2fr 2fr;
+}
+
+::-webkit-scrollbar
+{
+	display:none;
+}
+
+#todoN
+{
+margin-left: 41%;
+}
+.EmptyDiv
+{
+	margin-top: -28%;
+    margin-left: 38%;
+    font-size: 45px;
+    color: rgb(100 100 100 / 50%);
+}
+/*.firstTodoDiv
+{
+    margin-top: -50%;
+}*/
+#mytodoshowdiv
+{
+    width: 99%;
+    padding: 1%;
+    height: 1005px;
+    overflow-x: scroll;
+    display: grid;
+    margin-top: 1%;
+}
+.firstTodoDiv1
+{
+	 margin-top: -1038px;
+}
+#div2
+{
+    background-color: #2196f3;
+    height: 43%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 3%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.down2
+{
+    width: 100%;
+    /*height: 122%;
+    display: flex;
+    /* margin-left: 7%; */
+    /* background-color: #222222; */
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.mt2
+{
+	    width: 100%;
+    /*height: 122%;
+    display: flex;
+    /* margin-left: 7%; */
+    /* background-color: #222222; */
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.zt2
+{
+	width: 100%;
+    /*height: 122%;
+    display: flex;
+    /* margin-left: 7%; */
+    /* background-color: #222222; */
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;	
+}
+.expiryt
+{
+	width: 100%;
+    /*height: 122%;
+    display: flex;
+    /* margin-left: 7%; */
+    /* background-color: #222222; */
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.todoListdiv2
+{
+    margin-bottom: 7%;
+    background-color: #1c1c1c;
+    height: 26%;
+    width: 85%;
+    border-radius: 27px;
+}
+.d
+{
+    display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 90%;
+}
+.m
+{
+      display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 90%;	
+}
+.z
+{
+	display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 90%;
+}
+.expiry
+{
+	display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 90%;
+}
+#m2
+{
+	    background-color: #2196f3;
+    height: 43%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 3%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+#z2
+{
+    background-color: #2196f3;
+    height: 43%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 3%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+#expiryz
+{
+	background-color: #2196f3;
+    height: 43%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 3%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.big
+{
+    display: flex;
+    position: absolute;
+    margin-top: -56%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 85%);
+    justify-content: center;
+    align-items: center;
+}
+.todoListdiv
+{
+    display: flex;
+    background-color: #272626;
+    width: 46%;
+    height: 79%;
+    border-radius: 23px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#myTododiv
+{
+    grid-template-rows: 8% 92%;
+    height: 100%;
+    /* position: absolute; */
+    width: 100%;
+    display: grid;
+}
+.firstfirst
+{
+    height: 96%;
+    /* position: absolute; */
+    width: 100%;
+}
+.firstfirst1
+{
+    height: 100%;
+    /* position: absolute; */
+    width: 100%;
+}
+#assignedBydiv12{
+	overflow-x: scroll;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+    
+#assignedBydiv
+{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    /* padding: 2%; */
+    margin-left: -0.3%;
+    background-color: #000000;
+    display: grid;
+    margin-top: 0%;
+    grid-template-rows: repeat(1, 32%);
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    align-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: -22%;
+}
+#assignedBydivexe
+{
+    overflow-y: scroll;
+    width: 100%;
+    /* position: absolute; */
+    /* font-weight: 600; */
+    height: 100%;
+    /* padding: 2%; */
+    margin-left: -0.3%;
+    overflow-x: scroll;
+        background-color: #000000;
+    display: grid;
+    margin-top: 0%;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    grid-template-rows: repeat(1 ,32%);
+    align-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+}
+#assignedBydivexpiry
+{
+    overflow-y: scroll;
+    width: 100%;
+    /* position: absolute; */
+    /* font-weight: 600; */
+    height: 100%;
+    /* padding: 2%; */
+    margin-left: -0.3%;
+    overflow-x: scroll;
+        background-color: #000000;
+    display: grid;
+    margin-top: 0%;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    grid-template-rows: repeat(1 ,32%);
+    align-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+}
+.e
+{
+    display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+	height: 95%;
+    margin-bottom: -96%;
+}
+.ss
+{
+	 display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 97%;
+}
+.de
+{
+	 display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 97%;
+}
+.expiryde
+{
+	 display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+    height: 97%;	
+}
+.ee
+{
+    background-color: #2196f3;
+    height: 39%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 4%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.shows2
+{
+	    background-color: #2196f3;
+    height: 39%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 4%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.shows3
+{
+	background-color: #2196f3;
+    height: 39%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 4%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.shows4
+{
+	background-color: #2196f3;
+    height: 39%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 4%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.e3
+{
+    width: 97%;
+    height: 100%;
+    margin-left: 1.1%;
+}
+.s3
+{
+    width: 97%;
+    height: 100%;
+    margin-left: 1.1%;	
+}
+#ee1 {
+    overflow-x: scroll;
+}
+.subdives
+{
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 92%;
+    height: 31%;
+    padding-left: 9%;
+        padding-top: 1%;
+    margin-left: 3.9%;
+
+    /* flex-direction: column; */
+    /* align-content: space-between; */
+    /* align-items: flex-start; */
+    cursor: pointer;
+}
+
+.subdives2
+{   
+    display: block;
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 95%;
+    height: 29%;
+    padding-left: 9%;
+    padding-top: 3%;
+    margin-left: 3%;
+}
+.inside
+{
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 94%;
+    height: 31%;
+    padding-left: 9%;
+        padding-top: 1%;
+    margin-left: 2.9%;
+  
+    /* flex-direction: column; */
+    /* align-content: space-between; */
+    /* align-items: flex-start; */
+    cursor: pointer;
+}
+.zsubDive
+{
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 94%;
+    height: 31%;
+    padding-left: 9%;
+        padding-top: 1%;
+    margin-left: 2.9%;
+  
+    /* flex-direction: column; */
+    /* align-content: space-between; */
+    /* align-items: flex-start; */
+    cursor: pointer;
+}
+.expirysubDive
+{
+    display: block;
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 95%;
+    height: 29%;
+    padding-left: 9%;
+    padding-top: 3%;
+   margin-left: 2.5%;
+}
+.a
+{     height: 67%;
+    background-color: white;
+    color: black;
+    width: 85%;
+    border-radius: 10px;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    /* margin-left: -7%; */
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    cursor: pointer;
+    /* margin-left: 16%; */
+    justify-content: center;
+}
+#assignedBydivexe1
+{
+    overflow-y: scroll;
+    width: 100%;
+    /* position: absolute; */
+    /* font-weight: 600; */
+    height: 100%;
+    /* padding: 2%; */
+    margin-left: -0.3%;
+    overflow-x: scroll;
+    background-color: #000000;
+    display: grid;
+    grid-template-rows: repeat(1, 32%);
+    margin-top: 0%;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    align-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+#assignedBydivexpiryex
+{
+    overflow-y: scroll;
+    width: 100%;
+    /* position: absolute; */
+    /* font-weight: 600; */
+    height: 100%;
+    /* padding: 2%; */
+    margin-left: -0.3%;
+    overflow-x: scroll;
+    background-color: #000000;
+    display: grid;
+    margin-top: 0%;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    grid-template-rows: repeat(1 ,32%);
+    align-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+}
+.assignedBydivexpirys
+{   height: 64%;
+    background-color: white;
+    color: black;
+    width: 82%;
+    border-radius: 10px;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    margin-left: 0%;
+    align-items: center;
+    background-color: #201f1f;
+    color: white;
+    cursor: pointer;
+    /* margin-left: 16%; */
+    justify-content: center;
+	
+}
+.am
+{   height: 64%;
+ 
+    color: black;
+    width: 76%;
+    border-radius: 10px;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    margin-left: 0%;
+    align-items: center;
+        background-color: #1d1d1d;
+    color: white;
+    cursor: pointer;
+    /* margin-left: 16%; */
+    justify-content: center;
+}
+.am1
+{   height: 64%;
+    background-color: white;
+    color: black;
+    width: 76%;
+    border-radius: 10px;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    margin-left: 0%;
+    align-items: center;
+    background-color:#1c1b1b;
+    color: white;
+    cursor: pointer;
+    /* margin-left: 16%; */
+    justify-content: center;
+}
+.assignedBydivexpiryexss
+{
+	height: 64%;
+    background-color: white;
+    color: black;
+    width: 82%;
+    border-radius: 10px;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    margin-left: 0%;
+    align-items: center;
+    background-color: #201f1f;
+    color: white;
+    cursor: pointer;
+    /* margin-left: 16%; */
+    justify-content: center;
+}
+.secondTodoDiv1{
+margin-bottom: -19%;
+    /* margin-top: 7%; */
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    width: 98%;
+    height: 102%;
+    overflow-x: scroll;
+    margin-top: 0%;
+}
+
+.showhighAssignedByme
+{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    width: 100%;
+    height: 88%;
+    margin-left: 0%;
+}
+.deadLineTodo
+{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    width: 100%;
+    height: 88%;
+    margin-left: 0%;
+}
+.expiryTodos
+{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    width: 100%;
+    height: 88%;
+    margin-left: 0%;	
+}
+.mult-select-tag .rounded {
+	background-color: transparent !important;
+}
+.mult-select-tag .input 
+{
+	    color: white !important;
+}
+#r
+{
+    margin-top: -56.5%;
+    position: absolute;
+    width: 100%;
+    height: 102%;
+    display:flex;
+    background-color: rgb(101 101 101 / 50%);
+    align-items: center;
+    justify-content: center;
+}
+#cross1
+{
+    top: 13%;
+    border: 1 px solid black;
+    position: absolute;
+    font-size: 141%;
+    left: -30%;
+    border: 1px solid black;
+}
+#TodoListShow{
+	display: flex;
+    padding: 2.5%;
+    border-radius: 12px;
+    background-color: black;
+    height: 69%;
+    width: 28%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#cross3
+{
+	top: 18%;
+    border: 1 px solid black;
+    position: absolute;
+    font-size: 141%;
+    left: -30%;
+    border: 1px solid black;
+}
+#TodoListShows
+{
+		display: flex;
+    padding: 2.5%;
+    border-radius: 12px;
+    background-color: black;
+    height: 59%;
+    width: 28%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.todoDescdeatilsDiv
+{
+    margin-top: 3%;
+    margin-bottom: 13%;
+    font-weight: 300;
+    font-size: 89%;
+}
+.edit
+{
+	font-weight: 200;
+    left: 61%;
+    /* margin-left: 0%; */
+    /* margin-top: -31%; */
+    position: absolute;
+    cursor: pointer;
+    top: 21%;
+    font-size: 118%;
+    color: #948e8e;
+}
+.trash
+{
+	font-weight: 200;
+        left: 61.5%;
+    /* margin-left: 0%; */
+    /* margin-top: -31%; */
+    position: absolute;
+    cursor: pointer;
+    top: 21%;
+    font-size: 118%;
+    color: #948e8e;
+}
+.edit1
+{
+	font-weight: 200;
+    left: 61%;
+    /* margin-left: 0%; */
+    /* margin-top: -31%; */
+    position: absolute;
+    cursor: pointer;
+    top: 17%;
+    font-size: 118%;
+    color: #948e8e;
+}
+.trash1
+{
+	font-weight: 200;
+        left: 61.5%;
+    /* margin-left: 0%; */
+    /* margin-top: -31%; */
+    position: absolute;
+    cursor: pointer;
+    top: 17%;
+    font-size: 118%;
+    color: #948e8e;
+}
+.todoDescdeatilsDiv1
+{
+    margin-top: 2%;
+    margin-bottom: 7%;
+    font-weight: 300;
+    font-size: 95%;
+}
+.sdl
+{
+     margin-top: -5%;
+    margin-bottom: 13%;
+    font-size: 25px;
+    font-weight: 300;
+}
+.sdls
+{
+     margin-top: 3%;
+    margin-bottom: 13%;
+    font-size: 25px;
+    font-weight: 300;
+}
+.sd
+{
+    color: #00ffa6;
+    border: none;
+    font-weight: 300;
+    background-color: black;
+    margin-top: -18.2%;
+    margin-left: 36%;
+    margin-bottom: 13%;
+    /* color: black; */
+    font-size: 24px;
+}
+.ddl
+{
+    margin-top: -4%;
+    margin-bottom: 15%;
+    font-size: 25px;
+    font-weight: 300;
+}
+.dd2
+{
+	border: none;
+    background-color: black;
+    margin-top: -21.2%;
+    margin-left: 36%;
+   margin-bottom: 11%;
+    font-weight: 300;
+    color: #f4ac26;
+    font-size: 24px;
+}
+.vdu
+{
+	    margin-bottom: 11%;
+    margin-top: -6%;
+    margin-left: 42%;
+    color: red;
+    font-size: 27px;
+}
+.du
+{
+	font-size: 25px;
+}
+.prl
+{
+	font-size: 25px;
+}
+.p2
+{
+    border: none;
+    border-bottom: 1px solid #685c5c;
+    /* border: none; */
+    background-color: black;
+    margin-bottom: 11%;
+    margin-top: -7%;
+    margin-left: 32%;
+    color: #9b9aaf;
+    width: 59%;
+    font-size: 26px;
+}
+
+.stl
+{
+	font-size: 25px;
+}
+.st2
+{
+    border: none;
+    border-bottom: 1px solid #685c5c;
+    /* border: none; */
+    background-color: black;
+    margin-bottom: 17%;
+    margin-top: -7%;
+    margin-left: 32%;
+    color: #9b9aaf;
+    width: 59%;
+    font-size: 26px;
+}
+.cancelUpdate
+{
+	display: flex;
+    height: 7%;
+    border-radius: 22px;
+    margin-top: 1%;
+    width: 26%;
+    border: 1px solid #00bbff;
+    color: #00bbff;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+.Update
+{
+	border-radius: 50px;
+    display: flex;
+    border: 1px solid #00acff;
+    width: 22%;
+    color: white;
+    background-color: #0099ff;
+    margin-left: 77%;
+    margin-top: -8%;
+    height: 7%;
+    justify-content: center;
+    align-items: center;
+     cursor:pointer;
+}
+
+#x
+{
+   font-family: inherit;
+        margin-top: 1.1%;
+    border: 1px solid #009cff;
+    font-size: 22px;
+    margin-left: 94.5%;
+    width: 2.8%;
+    color: #009cff;
+    /* line-break: anywhere; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* border: 1px solid gray; */
+    height: 35.8%;
+    cursor: pointer;
+}
+#x:hover
+{
+	background-color: #5576938f;
+}
+#assignedBydiv1 {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    /* padding: 2%; */
+    margin-left: -0.3%;
+    background-color: #000000;
+    display: grid;
+    margin-top: 0%;
+    grid-template-rows: repeat(1, 32%);
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    align-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: -22%;
+}
+.i3
+{
+height: 67%;
+    background-color: white;
+    color: black;
+    width: 85%;
+    border-radius: 10px;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    /* margin-left: -7%; */
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    cursor: pointer;
+    /* margin-left: 16%; */
+    justify-content: center;
+}
+#Assigneessss{
+    margin-top: -59.9%;
+    width: 98%;
+    overflow: hidden;
+    /* position: absolute; */
+    grid-template-rows: 10% 90%;
+    height: 989px;
+    margin-left: 0.8%;
+}
+
+.secondTodoDiv2{
+    width: auto;
+    display: grid;
+    height: 917px;
+    background-color: #000000;
+    grid-column-gap: 15px;
+    margin-top: -12%;
+    justify-items: center;
+    margin-top: 3%;
+    overflow-x: scroll;
+   }
+.f {
+	display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 4%;
+    align-content: center;
+
+	width: 100%;
+    display: grid;
+    grid-template-rows: 8% 91%;
+    background-color: #222222;
+    border-radius: 10px;
+    /* margin-left: 4%; */
+    align-content: center;
+    height: 95%;
+}
+#f1 {
+    background-color: #2196f3;
+    height: 43%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 3%;
+    margin-left: 4%;
+    width: 36%;
+    border-radius: 29px;
+}
+.f3 {
+    width: 100%;
+    height: 100%;
+    margin-left: 3%;
+}
+.subdives3
+{   
+border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 94%;
+    height: 31%;
+    padding-left: 9%;
+        padding-top: 1%;
+    margin-left: -0.1%;
+    
+    /* flex-direction: column; */
+    /* align-content: space-between; */
+    /* align-items: flex-start; */
+    cursor: pointer;
+}
+.delsrr
+{
+	    display: flex;
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 92%;
+    height: 27%;
+    padding-left: 9%;
+     margin-left: 4%;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+}
+.expiryyy
+{
+    display: block;
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 95%;
+    height: 29%;
+    padding-left: 9%;
+    padding-top: 3%;
+    margin-left: 3%;
+}
+#TodoListShow1
+{
+	display: flex;
+    padding: 2%;
+    border-radius: 12px;
+    background-color: black;
+    height: 69%;
+    width: 28%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#x12
+{
+    cursor:pointer;
+    font-family: inherit;
+        margin-top: 0.5%;
+    border: 1px solid #009cff;
+    font-size: 28px;
+    margin-left: 95.5%;
+    width: 2.8%;
+    color: #009cff;
+    /* line-break: anywhere; */
+    font-size: 106%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* border: 1px solid gray; */
+    height: 48%;
+
+}
+
+
+#Imporatant
+{
+    margin-top: -6%;
+    margin-left: 6%;
+    color: #c2c2c2;
+    font-size: 16px;
+}
+.high
+{
+	    margin-left: 10%;
+	    color:white;
+	    width: 87%;
+    height: 11%;
+    /* border: 2px solid white; */
+    padding: 1%;
+    cursor:pointer;
+}
+#highpr
+{
+    color: #cdcdcd;
+    margin-top: 1.4%;
+}
+.high:hover
+{
+	border-radius: 13px;
+    background-color: #292727;
+    
+}
+.one
+{
+	color:white;
+}
+#highPriority
+{
+    grid-template-rows: 10% 90%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: black;
+}
+#DeadLineTodo
+{
+    grid-template-rows: 10% 90%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: black;
+}
+#expiryTodo
+{
+    grid-template-rows: 10% 90%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: black;
+}
+#highPriority2
+{
+   overflow-x:scroll;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: black;
+}
+#deadLineTodo2
+{
+   overflow-x:scroll;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: black;
+}
+#expiryTodoss
+{
+   overflow-x:scroll;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: black;	
+}
+#change
+{
+    height: 4.5%;
+    padding-top: 0.6%;
+    padding-left: 1%;
+    border: 1px solid #00a7f6;
+    background-color: black;
+    display: flex;
+    color: white;
+    width: 9%;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-left: -2%;
+    margin-top: -45%;
+    /* padding: 0.4%; */
+    flex-direction: column;
+    color: #00a7f6;
+}
+#changes3
+{
+    height: 4.5%;
+    padding-top: 0.6%;
+    padding-left: 1%;
+    border: 1px solid #00a7f6;
+    background-color: black;
+    display: flex;
+    color: white;
+    width: 9%;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-left: -2%;
+    margin-top: -45%;
+    /* padding: 0.4%; */
+    flex-direction: column;
+    color: #00a7f6;
+	
+}
+#changes
+{
+    height: 4.5%;
+    padding-top: 0.6%;
+    padding-left: 1%;
+    border: 1px solid #00a7f6;
+    background-color: black;
+    display: flex;
+    color: white;
+    width: 9%;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-left: -2%;
+    margin-top: -45%;
+    /* padding: 0.4%; */
+    flex-direction: column;
+    color: #00a7f6;
+}
+.showMyHighTodo
+{
+    margin-bottom: -7%;
+    width: 101%;
+    padding: 1%;
+    height: 1005px;
+    overflow-y: scroll;
+    display: grid;
+    margin-top: 1%;
+}
+.showDeadLineTodo
+{
+    margin-bottom: -7%;
+    width: 101%;
+    padding: 1%;
+    height: 1005px;
+    overflow-y: scroll;
+    display: grid;
+    margin-top: 1%;
+}
+.showExpiryTodo
+{
+	margin-bottom: -7%;
+    width: 101%;
+    padding: 1%;
+    height: 1005px;
+    overflow-y: scroll;
+    display: grid;
+    margin-top: 1%;
+}
+#x1x
+{
+    margin-top: -3.2%;
+    border: 1px solid #009cff;
+    font-size: 28px;
+    margin-left: 94.5%;
+    width: 2.8%;
+    color: #009cff;
+    /* line-break: anywhere; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* border: 1px solid gray; */
+    height: 46.8%;
+    cursor: pointer;
+}
+#x2x
+{
+    margin-top: -3.2%;
+    border: 1px solid #009cff;
+    font-size: 28px;
+    margin-left: 94.5%;
+    width: 2.8%;
+    color: #009cff;
+    /* line-break: anywhere; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* border: 1px solid gray; */
+    height: 46.8%;
+    cursor: pointer;
+}
+#logOut
+{
+	display: flex;
+    border-radius: 17px;
+    height: 58%;
+    width: 7%;
+    margin-bottom: 2%;
+    margin-left: 91%;
+    cursor: pointer;
+    color: #00a7f6;
+    /* border: 1px solid #00a7f6; */
+    margin-top: -3.3%;
+    align-items: center;
+    justify-content: center;
+}
+#status
+{
+	width: 6%;
+    height: 47%;
+    padding: 0.4%;
+    margin-top: -3%;
+    color: #00a7f6;
+    margin-left: -14%;
+    background-color: black;
+    border: 1px solid #00a7f6;
+}
+.overL
+{
+	white-space: nowrap;
+    overflow-x: scroll;
+    max-width: 66%;
+}
+#x123 {
+    font-family: inherit;
+        margin-top: 0.8%;
+    border: 1px solid #009cff;
+    font-size: 25px;
+    margin-left: 94.5%;
+    width: 2.8%;
+    color: #009cff;
+    /* line-break: anywhere; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* border: 1px solid gray; */
+    height: 46.8%;
+    cursor: pointer;
+}
+.sdiv
+{
+    display: block;
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 95%;
+    height: 29%;
+    padding-left: 9%;
+    padding-top: 3%;
+    margin-left: 3%;
+}
+.expirydelsdiv
+{
+    display: block;
+    border-radius: 3px;
+    color: white;
+    background-color: #000000;
+    width: 95%;
+    height: 29%;
+    padding-left: 9%;
+    padding-top: 3%;
+    margin-left: 3%;
+}
+.expiry1
+{
+    margin-left: 92%;
+    width: 4%;
+    height: 6%;
+    border-radius: 50px;
+    margin-top: -62%;
+    background-color: red;
+}
+.loarIcon1
+{
+	 margin-top: 2%;
+    width: 26px;
+    height: 26px;
+    margin-left: 9%;
+}
+.notification
+{
+    position: absolute;
+    margin-bottom: -44%;
+    top: 1.9%;
+    font-size: 128%;
+    left: 91%;
+    font-weight: 100;
+    color: #858585;
+    cursor: pointer;
+}
+.searchBar
+{
+    background-color: #222222;
+    margin-top: 0.1%;
+    margin-left: 32%;
+    border-radius: 17px;
+    padding: 1%;
+    height: 67%;
+    color: white;
+    width: 24%;
+    border: 1px solid black;
+}
+.searchBar1
+{
+    background-color: #222222;
+    margin-top: 0.5%;
+    margin-left: 32%;
+    border-radius: 17px;
+    padding: 1%;
+    height: 50%;
+    color: white;
+    width: 26%;
+    border: 1px solid black;
+}
+.truncate {
+    width: 40%;
+    height: 38%;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    max-width: 31%;
+       margin-bottom: -19%;
+}
+.truncate1 {
+    width: 100%;
+    /* height: 42%; */
+    /* text-overflow: ellipsis; */
+    white-space: nowrap;
+    overflow-x: scroll;
+    max-width: 66%;
+}
+.tododesc
+{
+    white-space: nowrap;
+    /* overflow: hidden; */
+    max-width: 62%;
+    overflow-x: scroll;
+    width: 69%;
+}
+.todoIdes
+{
+	    left: 57%;
+    position: absolute;
+    top: 21.0%;
+    font-weight: 300;
+    font-size: 143%;
+}
+.todoIdes1
+{
+	    left: 57%;
+    position: absolute;
+    top: 25%;
+    font-weight: 300;
+    font-size: 143%;
+}
+.subDives3expiry
+{
+	margin-left: 93%;
+    margin-bottom: 54%;
+    margin-top: -79%;
+}
+
+.insideExpiry
+{
+	    margin-left: 93%;
+    margin-bottom: 58%;
+    margin-top: -77%;
+    
+}
+#notificationdiv{
+    margin-top: 4%;
+    /* position: absolute; */
+    background-color: #2d2d2d;
+    height: 91%;
+    grid-template-rows: 5% 95%;
+    display: grid;
+    margin-left: 103%;
+    width: 22%;
+    }
+    
+.crossmark
+{
+	    font-size: 150%;
+    margin-left: 92%;
+    margin-top: 2%;
+    cursor:pointer;
+    transition: margin-left 2s;
+}
+.r2
+{
+margin-top: -56.5%;
+    position: absolute;
+    width: 100%;
+    height: 102%;
+        display: none;
+         transition: margin-left 2s;
+    background-color: rgb(101 101 101 / 0%);
+    align-items: center;
+    justify-content: center;
+}
+#notification2
+{
+	width:auto;
+	height:auto;
+	    overflow-y: scroll;
+}
+.notifyy
+{
+    border-radius: 11px;
+    background-color: #455056;
+    margin-left: 3%;
+    height: 22%;
+    padding: 0.5%;
+    width: 96%;
+    margin-bottom: 4%;
+    color: #d5d5d5;
+}
+#notify
+{
+    top: 2%;
+    border-radius: 67px;
+    width: 0.5%;
+    height: 0.8%;
+    position: absolute;
+    left: 91.7%;
+    background-color: #fd5b5b;
+}
+.headsa
+{
+    height: 8%;
+    margin-left: 2%;
+    margin-top: -4%;
+}
+.date2
+{
+	    margin-top: -12%;
+    margin-left: 74%;
+    font-weight: 300;
+}
+.message
+{
+    margin-top: 4%;
+    font-size: 108%;
+    margin-left: 4%;
+    font-weight: 300;
+}
+.todoid
+{
+    margin-top: -2%;
+    margin-left: 4%;
+    color: #919191;
+    font-weight: 300;
+}
+#who
+{
+	font-weight: 300;
+}
+.assigneename
+{
+    margin-top: -4%;
+    margin-left: 4%;
+    font-weight: 300;
+}
+.assigneeid
+{
+    margin-top: -4%;
+    margin-left: 4%;
+    font-weight: 300;
+}
+.markasRead
+{
+    margin-left: 67%;
+    color: #00a7f6;
+    margin-top: -8%;
+    font-weight: 300;
+    cursor: pointer;
+}
+.edithead
+{
+    font-weight: 600;
+    width: 61%;
+    font-size: 205%;
+    background-color: black;
+    border: 1px solid black;
+    border-bottom: 1px solid white;
+    margin-top: 5%;
+    height: 11%;
+}
+.editdesc
+{
+	    height: 7%;
+    margin-top: 8%;
+    margin-bottom: 13%;
+    font-weight: 300;
+    font-size: 89%;
+    color:white;
+    background-color: black;
+    border: 1px solid black;
+    border-bottom: 1px solid white;
+}
+.update1
+{
+	border-radius: 50px;
+    display: flex;
+    border: 1px solid #00acff;
+    width: 22%;
+    color: white;
+    background-color: #0099ff;
+    margin-left: 0%;
+    margin-top: -6%;
+    height: 7%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>TODO</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+<body>
+    <!-- Log In Form Section -->
+<section>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container left">
+            
+                <h1>Sign Up</h1>
+
+                <label>
+                    <input type="text" id="userName" value="" placeholder="Name"autocomplete="off" required="required"/>
+                </label>
+                <label>
+                    <input type="email" id="mail" value="" placeholder="Email" autocomplete="off" required="required"/>
+                </label>
+                <label>
+                    <input type="password" id="passWord" value="" placeholder="Password" autocomplete="off" required="required"/>
+                </label>
+                <label>
+                    <input type="text" id="Id" value="" placeholder="user name" autocomplete="off" required="required"/>
+                </label>
+                <button style="margin-top: 22px;" onclick="signUp()">Sign Up</button>
+                 <p id="signupP"></p>
+           
+        </div>
+        <div class="form-container sign-in-container">
+            
+                <h1 style="margin-top: -2%;">Sign in</h1>
+
+                <label>
+                    <input class="sign" value="" type="text" id="userId" required="required" autocomplete="off" placeholder="Enter user name"/>
+                </label>
+                <label>
+                    <input class="sign" value="" type="password" id="pass" required="required" autocomplete="off" placeholder="Password"/>
+                </label>
+
+                <button style="margin-top: 2%;"onclick="logIn()">Sign In</button>
+                 <p id="signinP" style="color: red;font-size: 20px;margin-top: 9%;"></p>
+           
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="head1">Log in</h1>
+                    <p>Sign in here if you already have an account </p>
+                    <button class="ghost mt-5" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="head">Create, Account!</h1>
+                    <p>Sign up if you still don't have an account ... </p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
